@@ -1,0 +1,21 @@
+CACHE MANIFEST
+# 2017-10-25:v31
+
+# Explicitly cached 'master entries'.
+CACHE:
+index.html
+default.css
+main.js
+Sr4SZjJG2shlLRwOkNqcEoX0hVgzZQUfRDuZrPvH3D8.woff2
+QnguTd82yEUxQZygH2gm8JBw1xU1rKptJj_0jans920.woff2
+audio1.mp3
+audio2.mp3
+pinkfloyd1.mp3
+pinkfloyd2.mp3
+#pinkfloyd3.mp3
+#pinkfloyd4.mp3
+#pinkfloyd5.mp3
+jquery-3.2.1.min.js
+
+NETWORK:
+*

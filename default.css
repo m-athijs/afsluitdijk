@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Ropa Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ropa Sans Regular'), local('RopaSans-Regular'), url(Sr4SZjJG2shlLRwOkNqcEoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+  }
+  
+  
+  /* latin */
+  
+  @font-face {
+    font-family: 'Ropa Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ropa Sans Regular'), local('RopaSans-Regular'), url(QnguTd82yEUxQZygH2gm8JBw1xU1rKptJj_0jans920.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+  
+  body {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 1em;
+    padding: 30px;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+
+  .loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #3498db;
+    width: 12px;
+    height: 12px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    display: inline-block;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
