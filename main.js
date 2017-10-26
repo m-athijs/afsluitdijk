@@ -1,5 +1,9 @@
+$(document).ready(function () {
+    $("#status").hide();
+});
+
 window.applicationCache.addEventListener('cached', function (e) {
-    $("#status").html("<a href='#'>start audio tour</a>");
+    $("#status").html("<a href='#'>START AUDIO TOUR</a>");
     if (e.message != undefined) {
         $("#cacheevent").html("checking " + e.message);
     }
@@ -56,3 +60,4 @@ window.applicationCache.update();
 if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
     window.applicationCache.swapCache();
 }
+
