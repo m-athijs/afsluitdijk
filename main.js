@@ -2,9 +2,9 @@ $(document).ready(function () {
     $("#status").hide();
 
     if (navigator.onLine) {
-        $("#onlinestatus").html('you are online');
+        $("#onlinestatus").html('YOU ARE ONLINE');
     } else {
-        $("#onlinestatus").html('you appear to be offline');
+        $("#onlinestatus").html('YOU APPEAR TO BE OFFLINE');
     }
 
     window.applicationCache.addEventListener('cached', function (e) {
