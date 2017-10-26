@@ -54,6 +54,11 @@ $(document).ready(function () {
     window.applicationCache.addEventListener('error', function (e) {
         $("#cacheevent").html("error " + e.message);
         $("#cachestatus").html(window.applicationCache.status);
+        if (window.applicationCache.status === 1) {
+            $("#status").html("<a href='audiotour1.html'>START AUDIO TOUR</a>");
+            $("#language").hide();
+            $("#status").show();
+        }
     }, false);
     
     window.applicationCache.addEventListener('obsolete', function (e) {
