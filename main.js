@@ -1,22 +1,38 @@
 window.applicationCache.addEventListener('cached', function (e) {
     $("#status").html("<a href='#'>start audio tour</a>");
+    if (e.message != undefined) {
+        $("#cacheevent").html("checking " + e.message);
+    }
+    $("#cachestatus").html(window.applicationCache.status);
 }, false);
 
 window.applicationCache.addEventListener('noupdate', function (e) {
     $("#status").html("<a href='#'>start audio tour</a>");
+    if (e.message != undefined) {
+        $("#cacheevent").html("checking " + e.message);
+    }
+    $("#cachestatus").html(window.applicationCache.status);
 }, false);
 
 window.applicationCache.addEventListener('updateready', function (e) {
     $("#status").html("<a href='#'>start audio tour</a>");
+    if (e.message != undefined) {
+        $("#cacheevent").html("checking " + e.message);
+    }
+    $("#cachestatus").html(window.applicationCache.status);
 }, false);
 
 window.applicationCache.addEventListener('checking', function (e) {
-    $("#cacheevent").html("checking " + e.message);
+    if (e.message != undefined) {
+        $("#cacheevent").html("checking " + e.message);
+    }
     $("#cachestatus").html(window.applicationCache.status);
 }, false);
 
 window.applicationCache.addEventListener('downloading', function (e) {
-    $("#cacheevent").html("downloading " + e.message);
+    if (e.message != undefined) {
+        $("#cacheevent").html("downloading " + e.message);
+    }
     $("#cachestatus").html(window.applicationCache.status);
 }, false);
 
