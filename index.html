@@ -15,7 +15,7 @@
     <div id="language">
         <div>SELECTEER TAAL</div>
         <div>SELECT LANGUAGE</div>
-        <a href="javascript: alert('test');">
+        <a href="javascript: selectLanguage('nl');">
             <img src="flag_nl.png" />
         </a>&nbsp;
         <a href="javascript: selectLanguage('en');">
@@ -25,12 +25,20 @@
 
     <div id="status">
         <div class="loader"></div>&nbsp;DOWNLOADING AUDIO TOUR
-        <div>HOLD ON, THIS MIGHT TAKE A WHILE (<span id="loaded"></span> % LOADED)</div>
+        <br/>
+        <div>HOLD ON, THIS MIGHT TAKE A WHILE (
+            <span id="loaded"></span> % LOADED)</div>
     </div>
     <br />
+    <br />
+
     <div id="onlinestatus"></div>
-    <div id="cacheevent"></div>
-    <div id="cachestatus"></div>
+
+    <br />
+    <br />
+
+    <!-- <div id="cacheevent"></div>
+    <div id="cachestatus"></div> -->
 
     <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
