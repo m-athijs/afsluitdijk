@@ -18,7 +18,7 @@ $(document).ready(function () {
     }, false);
     
     window.applicationCache.addEventListener('noupdate', function (e) {
-        $("#status").html("<a href='audiotour1.html'>start audio tour</a>");
+        $("#status").html("<a href='audiotour1.html'>START AUDIO TOUR</a>");
         $("#language").hide();
         $("#status").show();
         if (e.message != undefined) {
@@ -28,7 +28,7 @@ $(document).ready(function () {
     }, false);
     
     window.applicationCache.addEventListener('updateready', function (e) {
-        $("#status").html("<a href='audiotour1.html'>start audio tour</a>");
+        $("#status").html("<a href='audiotour1.html'>START AUDIO TOUR</a>");
         $("#language").hide();
         $("#status").show();
         if (e.message != undefined) {
@@ -68,6 +68,8 @@ $(document).ready(function () {
     
     window.applicationCache.addEventListener('progress', function (e) {
         $("#cacheevent").html("progress " + e.message);
+        var percentageLoaded = Math.ceil(e.loaded / e.total * 100);
+        $("#loaded").html(percentageLoaded);
         $("#cachestatus").html(window.applicationCache.status);
     }, false);
     
