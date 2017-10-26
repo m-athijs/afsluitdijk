@@ -1,12 +1,15 @@
 CACHE MANIFEST
-# 2017-10-26:v20
+# 2017-10-26:v32
 
 # Explicitly cached 'master entries'.
 CACHE:
 index.html
+audiotour1.html
+audiotour2.html
 default.css
 functions.js
 main.js
+audiotour.js
 Sr4SZjJG2shlLRwOkNqcEoX0hVgzZQUfRDuZrPvH3D8.woff2
 QnguTd82yEUxQZygH2gm8JBw1xU1rKptJj_0jans920.woff2
 audio1.mp3
