@@ -3,8 +3,10 @@ $(document).ready(function () {
 
     if (navigator.onLine) {
         $("#onlinestatus").html('YOU ARE ONLINE');
+        $("#download").show();
     } else {
         $("#onlinestatus").html('YOU APPEAR TO BE OFFLINE');
+        $("#download").hide();
     }
 
     window.applicationCache.addEventListener('cached', function (e) {
