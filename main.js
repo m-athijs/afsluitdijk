@@ -96,7 +96,9 @@ $(document).ready(function () {
             speedX += event.acceleration.x / 1000 * ((currentTime - lastTimestamp)) / 3600;
             //... same for Y and Z
             lastTimestamp = currentTime;
-            $("#speed").html(speedX);
+            if (speedX > 0.1) {
+                $("#speed").html(speedX);
+            }
         }, false);
     }
 });
