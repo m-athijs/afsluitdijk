@@ -97,7 +97,7 @@ $(document).ready(function () {
             //... same for Y and Z
             lastTimestamp = currentTime;
             //if (speedX > 0.1) {
-                $("#speed").html(speedX);
+                $("#speed").html(Math.ceil(speedX);
             //}
         }, false);
     }
