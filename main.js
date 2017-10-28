@@ -93,7 +93,7 @@ $(document).ready(function () {
                 return; //ignore first call, we need a reference time
             }
             //  m/s² / 1000 * (miliseconds - miliseconds)/1000 /3600 => km/h (if I didn't made a mistake)
-            speedX += event.acceleration.x / 1000 * ((currentTime - lastTimestamp / 1000)) / 3.6;
+            speedX += event.acceleration.x / 1000 * ((currentTime - lastTimestamp / 1000)) / 3600;
             //... same for Y and Z
             lastTimestamp = currentTime;
             //if (speedX > 0.1) {
