@@ -83,7 +83,7 @@ $(document).ready(function () {
 
     if (window.DeviceMotionEvent) {
         window.addEventListener('devicemotion', function(e) {
-            alert('motion detected...');
+            alert(e.acceleration.x + " " + e.acceleration.y + " " + e.acceleration.z);
         });
     }
 });
