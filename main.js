@@ -81,24 +81,40 @@ $(document).ready(function () {
         window.applicationCache.swapCache();
     }
 
-    if (window.DeviceMotionEvent) {
-        var lastTimestamp;
-        var speedX = 0,
-            speedY = 0,
-            speedZ = 0;
-        window.addEventListener('devicemotion', function (event) {
-            var currentTime = new Date().getTime();
-            if (lastTimestamp === undefined) {
-                lastTimestamp = new Date().getTime();
-                return; //ignore first call, we need a reference time
+    // if (window.DeviceMotionEvent) {
+    //     var lastTimestamp;
+    //     var speedX = 0,
+    //         speedY = 0,
+    //         speedZ = 0;
+    //     window.addEventListener('devicemotion', function (event) {
+    //         var currentTime = new Date().getTime();
+    //         if (lastTimestamp === undefined) {
+    //             lastTimestamp = new Date().getTime();
+    //             return; //ignore first call, we need a reference time
+    //         }
+    //         //  m/s² / 1000 * (miliseconds - miliseconds)/1000 /3600 => km/h (if I didn't made a mistake)
+    //         speedX = event.acceleration.x / 1000 * ((currentTime - lastTimestamp / 1000)) / 3600 / 1000;
+    //         //... same for Y and Z
+    //         lastTimestamp = currentTime;
+    //         //if (speedX > 0.1) {
+    //             $("#speed").html(Math.ceil(speedX));
+    //         //}
+    //     }, false);
+    // }
+
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(
+            geosuccess,
+            geofailure,
+            {
+                enableHighAccuracy:true,
+                maximumAge:30000,
+                timeout:20000
             }
-            //  m/s² / 1000 * (miliseconds - miliseconds)/1000 /3600 => km/h (if I didn't made a mistake)
-            speedX = event.acceleration.x / 1000 * ((currentTime - lastTimestamp / 1000)) / 3600 / 1000;
-            //... same for Y and Z
-            lastTimestamp = currentTime;
-            //if (speedX > 0.1) {
-                $("#speed").html(Math.ceil(speedX));
-            //}
-        }, false);
+        );        
+    }
+
+    function geosuccess(e) {
+        $("#speed").html(e.coords.speed);
     }
 });
