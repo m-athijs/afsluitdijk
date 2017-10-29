@@ -108,15 +108,16 @@ $(document).ready(function () {
             geofailure,
             {
                 enableHighAccuracy:true,
-                maximumAge:30000,
-                timeout:20000
+                maximumAge:0,
+                timeout:20000,
+                distanceFilter:1
             }
         );        
     } else {
-        $("#speed").html('unknown');
+        alert('your browser does not support geolocation');
     }
 
     function geosuccess(e) {
-        $("#speed").html(e.coords.speed);
+        $("#speed").html(e.coords.speed.x);
     }
 });
