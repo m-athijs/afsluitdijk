@@ -109,19 +109,23 @@ $(document).ready(function () {
             {
                 enableHighAccuracy:true,
                 maximumAge:0,
-                timeout:20000,
+                timeout:1000,
                 distanceFilter:1
             }
         );        
     } else {
-        alert('your browser does not support geolocation');
+        $("#speed").html('geolocation is not supported by your browser');
     }
 
     function geosuccess(e) {
-        $("#speed").html(e.coords.speed.x);
+        if (e.coords.speed != null) {
+            $("#speed").html('your speed is ' + e.coords.speed.x + ' m/s');
+        } else {
+            $("#speed").html('unable to determine your speed');
+        }        
     }
 
     function geofailure(e) {
-        console.log('something went wrong');
+        $("#speed").html('unable to determine your speed');
     }
 });
