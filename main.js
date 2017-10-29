@@ -81,54 +81,55 @@ $(document).ready(function () {
         window.applicationCache.swapCache();
     }
 
-    // if (window.DeviceMotionEvent) {
-    //     var lastTimestamp;
-    //     var speedX = 0,
-    //         speedY = 0,
-    //         speedZ = 0;
-    //     window.addEventListener('devicemotion', function (event) {
-    //         var currentTime = new Date().getTime();
-    //         if (lastTimestamp === undefined) {
-    //             lastTimestamp = new Date().getTime();
-    //             return; //ignore first call, we need a reference time
+    if (window.DeviceMotionEvent) {
+        var lastTimestamp;
+        var speedX = 0,
+            speedY = 0,
+            speedZ = 0;
+        window.addEventListener('devicemotion', function (event) {
+            // var currentTime = new Date().getTime();
+            // if (lastTimestamp === undefined) {
+            //     lastTimestamp = new Date().getTime();
+            //     return; //ignore first call, we need a reference time
+            // }
+            // //  m/s² / 1000 * (miliseconds - miliseconds)/1000 /3600 => km/h (if I didn't made a mistake)
+            // speedX = event.acceleration.x / 1000 * ((currentTime - lastTimestamp / 1000)) / 3600 / 1000;
+            // //... same for Y and Z
+            // lastTimestamp = currentTime;
+            // //if (speedX > 0.1) {
+            //     $("#speed").html(Math.ceil(speedX));
+            // //}
+            $("#speed").html(event);
+        }, false);
+    }
+
+    // if (navigator.geolocation) {
+    //     navigator.geolocation.watchPosition(
+    //         geosuccess,
+    //         geofailure,
+    //         {
+    //             enableHighAccuracy:true,
+    //             maximumAge:0,
+    //             timeout:1000,
+    //             distanceFilter:1
     //         }
-    //         //  m/s² / 1000 * (miliseconds - miliseconds)/1000 /3600 => km/h (if I didn't made a mistake)
-    //         speedX = event.acceleration.x / 1000 * ((currentTime - lastTimestamp / 1000)) / 3600 / 1000;
-    //         //... same for Y and Z
-    //         lastTimestamp = currentTime;
-    //         //if (speedX > 0.1) {
-    //             $("#speed").html(Math.ceil(speedX));
-    //         //}
-    //     }, false);
+    //     );        
+    // } else {
+    //     $("#speed").html('geolocation is not supported by your browser');
     // }
 
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(
-            geosuccess,
-            geofailure,
-            {
-                enableHighAccuracy:true,
-                maximumAge:0,
-                timeout:1000,
-                distanceFilter:1
-            }
-        );        
-    } else {
-        $("#speed").html('geolocation is not supported by your browser');
-    }
+    // var i = 0;
 
-    var i = 0;
+    // function geosuccess(e) {
+    //     i++;     
+    //     if (e.coords.speed != null) {
+    //         $("#speed").html('your speed is ' + e.coords.speed.x + ' m/s ' + i);
+    //     } else {
+    //         $("#speed").html('unable to determine your speed ' + i);
+    //     }   
+    // }
 
-    function geosuccess(e) {
-        i++;     
-        if (e.coords.speed != null) {
-            $("#speed").html('your speed is ' + e.coords.speed.x + ' m/s ' + i);
-        } else {
-            $("#speed").html('unable to determine your speed ' + i);
-        }   
-    }
-
-    function geofailure(e) {
-        $("#speed").html('unable to determine your speed');
-    }
+    // function geofailure(e) {
+    //     $("#speed").html('unable to determine your speed');
+    // }
 });
