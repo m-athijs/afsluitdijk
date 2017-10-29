@@ -92,7 +92,7 @@ $(document).ready(function () {
     // } else {
     //     alert('Geolocation is not supported in your browser');
     // }
-    startWatch();
+    //startWatch();
 });
 
 function showPosition(position) {
