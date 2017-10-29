@@ -1,3 +1,7 @@
+$(document).ready(function () {
+    //play();
+});
+
 function play() {
     document.getElementById('audiofile').play();
 }
