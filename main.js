@@ -117,12 +117,15 @@ $(document).ready(function () {
         $("#speed").html('geolocation is not supported by your browser');
     }
 
+    var i = 0;
+
     function geosuccess(e) {
+        i++;     
         if (e.coords.speed != null) {
-            $("#speed").html('your speed is ' + e.coords.speed.x + ' m/s');
+            $("#speed").html('your speed is ' + e.coords.speed.x + ' m/s ' + i);
         } else {
-            $("#speed").html('unable to determine your speed');
-        }        
+            $("#speed").html('unable to determine your speed ' + i);
+        }   
     }
 
     function geofailure(e) {
