@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //play();
+    play();
 });
 
 function play() {
