@@ -112,6 +112,8 @@ $(document).ready(function () {
                 timeout:20000
             }
         );        
+    } else {
+        $("#speed").html('unknown');
     }
 
     function geosuccess(e) {
