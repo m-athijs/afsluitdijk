@@ -120,4 +120,8 @@ $(document).ready(function () {
     function geosuccess(e) {
         $("#speed").html(e.coords.speed.x);
     }
+
+    function geofailure(e) {
+        console.log('something went wrong');
+    }
 });
